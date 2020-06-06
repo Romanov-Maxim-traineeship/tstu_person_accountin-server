@@ -1,18 +1,15 @@
-const R = require("ramda");
+import { compose, replace } from "ramda";
 
-const db = require("../config/db");
+import db from "../config/db";
 
 const getMongoUrlCOnnect = () => {
-  return R.compose(
-    R.replace(":userName", db.userName),
-    R.replace(":password", db.password),
-    R.replace(":dbName", db.dbName)
+  return compose(
+    replace(":userName", db.userName),
+    replace(":password", db.password),
+    replace(":dbName", db.dbName)
   )(db.url);
 };
 
 const getClusterDatabase = (database) => database.db(db.dbName);
 
-module.exports = {
-  getMongoUrlCOnnect,
-  getClusterDatabase,
-};
+export { getMongoUrlCOnnect, getClusterDatabase };

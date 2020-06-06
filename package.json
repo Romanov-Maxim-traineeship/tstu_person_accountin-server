@@ -1,17 +1,11 @@
 {
-  "name": "your-project-name",
+  "name": "tstu_person_accounting-server",
   "version": "0.0.0",
   "private": true,
   "nodemonConfig": {
     "exec": "npm run dev",
     "watch": [
-      "server/*",
-      "public/*"
-    ],
-    "ignore": [
-      "**/__tests__/**",
-      "*.test.js",
-      "*.spec.js"
+      "server/*"
     ]
   },
   "scripts": {
@@ -42,8 +36,10 @@
   "babel": {
     "presets": [
       "@babel/preset-env"
-    ],"plugins": [
-      ["@babel/plugin-transform-runtime",
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-transform-runtime",
         {
           "regenerator": true
         }
