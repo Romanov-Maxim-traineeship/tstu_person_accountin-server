@@ -3,6 +3,8 @@ import path from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
 import { MongoClient } from "mongodb";
+import pdf from "express-pdf";
+
 // import usersRouter from "./routes/users";
 
 import indexRouter from "./routes/index";
@@ -33,6 +35,8 @@ app.use(function(req, res, next) {
   // Pass to next layer of middleware
   next();
 });
+
+app.use(pdf);
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
