@@ -13,7 +13,7 @@ const debug = debugLib("tstu_person_accounting-server:server");
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || "3000");
+var port = normalizePort(process.env.PORT || "5000");
 app.set("port", port);
 
 /**
